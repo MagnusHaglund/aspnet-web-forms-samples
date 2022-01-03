@@ -4,7 +4,7 @@ node {
     checkout scm
   }
   stage('Restore Packages') {
-    bat "dotnet restore ReportsWebFormsSamples.sln"
+    bat "dotnet restore ReportsWebFormsSamples.csproj"
   }
   stage('SonarQube Analysis') {
     def msbuildHome = tool 'Default MSBuild'
