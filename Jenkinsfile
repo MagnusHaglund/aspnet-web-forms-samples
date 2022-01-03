@@ -1,6 +1,6 @@
 node {
   stage('SCM') {
-    deleteDir()
+    //deleteDir()
     checkout scm
   }
   stage('Restore Packages') {
