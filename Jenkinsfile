@@ -10,9 +10,8 @@ node {
     def msbuildHome = tool 'Default MSBuild'
     def scannerHome = tool 'SonarScanner for MSBuild'
     withSonarQubeEnv() {
-      bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" begin /k:\"Demo\""
+      bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" begin /k:\"DepTrackSonarQubeDEMO\""
       //bat "\"${msbuildHome}\\MSBuild.exe\" /restore"
-      bat "\"${msbuildHome}\\MSBuild.exe\" /t:restore"
       bat "\"${msbuildHome}\\MSBuild.exe\" /t:Rebuild"
       bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" end"
     }
@@ -22,6 +21,6 @@ node {
     bat "dotnet CycloneDX ReportsWebFormsSamples.sln -o ."
   }
   stage('dependencyTrackPublisher') {
-    dependencyTrackPublisher artifact: 'bom.xml', projectId: 'b30ce81d-23a1-4557-847d-0bf0069c59a2', synchronous: true
+    dependencyTrackPublisher artifact: 'bom.xml', projectId: '123530a3-16ef-4629-ac6d-dcac3ba6514c', synchronous: true
   }
 }
