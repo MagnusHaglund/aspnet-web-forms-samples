@@ -4,7 +4,7 @@ node {
     checkout scm
   }
   stage('Restore Packages') {
-    bat "dotnet restore ReportsWebFormsSamples.csproj"
+    bat "dotnet restore ReportsWebFormsSamples.sln"
   }
   stage('SonarQube Analysis') {
 
