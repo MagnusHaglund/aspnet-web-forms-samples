@@ -11,7 +11,7 @@ node {
     withSonarQubeEnv() {
       bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
       //bat "\"${msbuildHome}\\MSBuild.exe\" /restore"
-      bat "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe /t:Rebuild"
+      bat "\"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe\" /t:Rebuild"
       bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe end"
     }
   }
